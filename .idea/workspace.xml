@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a6726f1e-fe3b-427b-937d-7927d5d61703" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/activos-parking/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/activos-parking/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/activos-parking/src/main/java/com/activos/activosparking/ActivosParkingApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/activos-parking/src/main/java/com/activos/activosparking/config/WebConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/activos-parking/src/main/java/com/activos/activosparking/controller/AutomovilController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/activos-parking/src/main/java/com/activos/activosparking/controller/TypeAutomovilController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/activos-parking/src/main/java/com/activos/activosparking/controller/dto/AutomovilDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/activos-parking/src/main/java/com/activos/activosparking/controller/dto/TypeAutomovilDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/activos-parking/src/main/java/com/activos/activosparking/controller/mapper/Mapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/activos-parking/src/main/java/com/activos/activosparking/model/Automovil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/activos-parking/src/main/java/com/activos/activosparking/model/TypeAutomovil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/activos-parking/src/main/java/com/activos/activosparking/repository/AutomovilRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/activos-parking/src/main/java/com/activos/activosparking/repository/TypeAutomovilRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/activos-parking/src/main/java/com/activos/activosparking/service/AutomovilService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/activos-parking/src/main/java/com/activos/activosparking/service/TypeAutomovilService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/activos-parking/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/activos-parking/src/test/java/com/activos/activosparking/ActivosParkingApplicationTests.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="2d06hiSWTZPLG2lCICCaUjZPfIB" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/javie/Desktop/skill_tests/activos-parking/activos-parking",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a6726f1e-fe3b-427b-937d-7927d5d61703" name="Changes" comment="" />
+      <created>1709132777718</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1709132777718</updated>
+      <workItem from="1709132780951" duration="18000" />
+    </task>
+    <servers />
+  </component>
+</project>
