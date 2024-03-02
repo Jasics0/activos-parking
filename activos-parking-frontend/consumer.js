@@ -83,9 +83,8 @@ async function exitParking() {
             throw new Error(await response.text());
         }
 
-        const result = await response.json();
-        alert("Salida exitosa");
-        return result;
+        alert(await response.text());
+
     } catch (error) {
         alert(error.message)
         throw error; // Puedes manejar el error o lanzarlo nuevamente según tus necesidades

@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "automoviles")
@@ -25,10 +26,10 @@ public class Automovil {
     private TypeAutomovil typeAutomovil;
 
     @Column(name= "fecha_ingreso")
-    private LocalDate fechaIngreso;
+    private LocalDateTime fechaIngreso;
 
     @Column (name = "fecha_salida")
-    private LocalDate fechaSalida;
+    private LocalDateTime fechaSalida;
 
 
 }

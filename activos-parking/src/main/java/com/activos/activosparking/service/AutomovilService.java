@@ -3,16 +3,23 @@ package com.activos.activosparking.service;
 import com.activos.activosparking.model.Automovil;
 import com.activos.activosparking.repository.AutomovilRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
 
 @Service
 @RequiredArgsConstructor
 public class AutomovilService {
 
     private final AutomovilRepository automovilRepository;
+
+    private final JdbcTemplate jdbcTemplate;
+
 
     public void deleteAutomovil(long id) {
         automovilRepository.deleteById(id);
@@ -23,7 +30,7 @@ public class AutomovilService {
     }
 
     public Automovil addAutomovil(Automovil automovil) {
-        automovil.setFechaIngreso(LocalDate.now());
+        automovil.setFechaIngreso(LocalDateTime.now());
         return automovilRepository.save(automovil);
     }
 
@@ -60,8 +67,24 @@ public class AutomovilService {
         if (automovilToUpdate == null) {
             throw new RuntimeException("Automovil not found");
         }
-        automovilToUpdate.setFechaSalida(LocalDate.now());
+        automovilToUpdate.setFechaSalida(LocalDateTime.now());
         return automovilRepository.save(automovilToUpdate);
+    }
+
+    public double calculatePayment(long id) {
+
+        String sql = "SELECT calcular_valor_a_pagar(fecha_ingreso, fecha_salida) AS valor_a_pagar FROM automoviles WHERE id = ?";
+
+        Map<String, Object> result = jdbcTemplate.queryForMap(sql, id);
+
+        BigDecimal valueToPay = (BigDecimal) result.get("valor_a_pagar");
+
+        if (valueToPay == null) {
+            return 0.0;
+        }
+
+        return valueToPay.doubleValue();
+
     }
 
 }

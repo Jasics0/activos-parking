@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
@@ -19,7 +19,7 @@ public class AutomovilDTO {
     @Schema(name = "typeAutomovil", description = "Tipo de automóvil", example = "1")
     private TypeAutomovilDTO typeAutomovil;
     @Schema(name = "fechaIngreso", description = "Fecha de ingreso del automóvil", example = "2021-01-01")
-    private LocalDate fechaIngreso;
+    private LocalDateTime fechaIngreso;
     @Schema(name = "fechaSalida", description = "Fecha de salida del automóvil", example = "2021-01-01")
-    private LocalDate fechaSalida;
+    private LocalDateTime fechaSalida;
 }

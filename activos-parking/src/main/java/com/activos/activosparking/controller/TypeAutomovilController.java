@@ -3,10 +3,9 @@ package com.activos.activosparking.controller;
 import com.activos.activosparking.controller.dto.TypeAutomovilDTO;
 import com.activos.activosparking.controller.mapper.Mapper;
 import com.activos.activosparking.service.TypeAutomovilService;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,18 +15,20 @@ import java.util.List;
 @RestController
 @RequestMapping("/typeAutomovil")
 @RequiredArgsConstructor
-@Api(value = "TypeAutomovilController", description = "Operaciones relacionadas con tipos de automóviles")
-
+@Tag(name = "TypeAutomovilController", description = "Operaciones relacionadas con tipos de automóviles")
 public class TypeAutomovilController {
 
     private final TypeAutomovilService typeAutomovilService;
 
-
+    /**
+     * Obtener todos los tipos de automóviles.
+     *
+     * @return ResponseEntity con la lista de DTOs de tipos de automóviles.
+     */
     @GetMapping()
-    @ApiOperation(value = "Obtener todos los tipos de automóviles", response = TypeAutomovilDTO.class, responseContainer = "List")
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "Tipos de automóviles obtenidos correctamente"),
-            @ApiResponse(code = 400, message = "Error en la solicitud")
+    @Operation(summary = "Obtener todos los tipos de automóviles", responses = {
+            @ApiResponse(responseCode = "200", description = "Tipos de automóviles obtenidos correctamente"),
+            @ApiResponse(responseCode = "400", description = "Error en la solicitud")
     })
     public ResponseEntity getAllTypeAutomovil() {
         try {
@@ -38,11 +39,16 @@ public class TypeAutomovilController {
         }
     }
 
+    /**
+     * Agregar un tipo de automóvil.
+     *
+     * @param typeAutomovilDTO DTO del tipo de automóvil a agregar.
+     * @return ResponseEntity con el DTO del tipo de automóvil agregado.
+     */
     @PostMapping()
-    @ApiOperation(value = "Agregar un tipo de automóvil", response = TypeAutomovilDTO.class)
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "Tipo de automóvil agregado correctamente"),
-            @ApiResponse(code = 400, message = "Error en la solicitud")
+    @Operation(summary = "Agregar un tipo de automóvil", responses = {
+            @ApiResponse(responseCode = "200", description = "Tipo de automóvil agregado correctamente"),
+            @ApiResponse(responseCode = "400", description = "Error en la solicitud")
     })
     public ResponseEntity addTypeAutomovil(@RequestBody TypeAutomovilDTO typeAutomovilDTO) {
         try {
@@ -52,11 +58,16 @@ public class TypeAutomovilController {
         }
     }
 
+    /**
+     * Actualizar un tipo de automóvil existente.
+     *
+     * @param typeAutomovilDTO DTO del tipo de automóvil con los datos actualizados.
+     * @return ResponseEntity con el DTO del tipo de automóvil actualizado.
+     */
     @PutMapping()
-    @ApiOperation(value = "Actualizar un tipo de automóvil", response = TypeAutomovilDTO.class)
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "Tipo de automóvil actualizado correctamente"),
-            @ApiResponse(code = 400, message = "Error en la solicitud")
+    @Operation(summary = "Actualizar un tipo de automóvil", responses = {
+            @ApiResponse(responseCode = "200", description = "Tipo de automóvil actualizado correctamente"),
+            @ApiResponse(responseCode = "400", description = "Error en la solicitud")
     })
     public ResponseEntity updateTypeAutomovil(@RequestBody TypeAutomovilDTO typeAutomovilDTO) {
         try {
@@ -66,11 +77,16 @@ public class TypeAutomovilController {
         }
     }
 
+    /**
+     * Eliminar un tipo de automóvil por su ID.
+     *
+     * @param id ID del tipo de automóvil a eliminar.
+     * @return ResponseEntity con el resultado de la eliminación.
+     */
     @DeleteMapping("/{id}")
-    @ApiOperation(value = "Eliminar un tipo de automóvil", response = ResponseEntity.class)
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "Tipo de automóvil eliminado correctamente"),
-            @ApiResponse(code = 400, message = "Error en la solicitud")
+    @Operation(summary = "Eliminar un tipo de automóvil por su ID", responses = {
+            @ApiResponse(responseCode = "200", description = "Tipo de automóvil eliminado correctamente"),
+            @ApiResponse(responseCode = "400", description = "Error en la solicitud")
     })
     public ResponseEntity deleteTypeAutomovil(@PathVariable long id) {
         try {
@@ -80,5 +96,4 @@ public class TypeAutomovilController {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
-
 }
